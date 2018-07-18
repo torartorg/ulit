@@ -1,4 +1,5 @@
 import subprocess
+from time import sleep
 def getit():
     s = subprocess.getstatusoutput("curl https://www.jianshu.com/p/bdbe55fd009d")
     s = str(s)
